@@ -17,10 +17,12 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blogs/', include('apps.blogs.urls', namespace='blogs')),
+    path('', include('apps.common.urls', namespace='common')),
 ]
 
 if settings.DEBUG:
