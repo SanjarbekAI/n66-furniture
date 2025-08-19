@@ -24,7 +24,11 @@ urlpatterns = []
 
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
+    path('accounts/', include('apps.accounts.urls', namespace='accounts')),
+    path('basket/', include('apps.basket.urls', namespace='basket')),
     path('blogs/', include('apps.blogs.urls', namespace='blogs')),
+    path('orders/', include('apps.orders.urls', namespace='orders')),
+    path('products/', include('apps.products.urls', namespace='products')),
     path('', include('apps.common.urls', namespace='common')),
 )
 
